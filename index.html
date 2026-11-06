@@ -195,21 +195,21 @@
           SPORTS FEST 2027 <br> COMING SOON
         </div>
         
-        <div class="grid grid-cols-4 gap-4 md:gap-6 text-center opacity-40 select-none">
+        <div class="grid grid-cols-4 gap-4 md:gap-6 text-center">
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-days" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Days</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-hours" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Hours</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-mins" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Mins</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-secs" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Secs</span>
           </div>
         </div>
@@ -707,5 +707,17 @@
     </div>
   </footer>
 
+<script>
+  // Hedef tarih (Istanbul saati). Sadece aşağıdaki satırı değiştir:
+  const target = new Date("2027-05-09T00:00:00+03:00").getTime();
+  const ids = ["cd-days", "cd-hours", "cd-mins", "cd-secs"];
+  const pad = n => String(n).padStart(2, "0");
+  function tick() {
+    const diff = Math.max(0, target - Date.now());
+    const vals = [Math.floor(diff/86400000), Math.floor(diff/3600000)%24, Math.floor(diff/60000)%60, Math.floor(diff/1000)%60];
+    vals.forEach((v,i)=>{ const el=document.getElementById(ids[i]); if(el) el.textContent=pad(v); });
+  }
+  tick(); setInterval(tick, 1000);
+</script>
 </body>
 </html>
