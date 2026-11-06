@@ -197,19 +197,19 @@
         
         <div class="grid grid-cols-4 gap-4 md:gap-6 text-center">
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span id="cd-days" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-days" class="block text-5xl md:text-6xl font-display tracking-wide text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Days</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span id="cd-hours" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-hours" class="block text-5xl md:text-6xl font-display tracking-wide text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Hours</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span id="cd-mins" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-mins" class="block text-5xl md:text-6xl font-display tracking-wide text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Mins</span>
           </div>
           <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
-            <span id="cd-secs" class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span id="cd-secs" class="block text-5xl md:text-6xl font-display tracking-wide text-brand-accent">00</span>
             <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Secs</span>
           </div>
         </div>
@@ -709,7 +709,7 @@
 
 <script>
   // Hedef tarih (Istanbul saati). Sadece aşağıdaki satırı değiştir:
-  const target = new Date("2027-05-09T00:00:00+03:00").getTime();
+  const target = new Date("2027-05-06T00:00:00+03:00").getTime();
   const ids = ["cd-days", "cd-hours", "cd-mins", "cd-secs"];
   const pad = n => String(n).padStart(2, "0");
   function tick() {
